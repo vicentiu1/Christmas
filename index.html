@@ -61,9 +61,15 @@
         }
 
         @keyframes moveSanta {
-            0% { left: 100%; top: 75%; }
-            50% { left: 50%; top: 30%; }
-            100% { left: 0; top: 75%; }
+            0% { 
+                transform: translate(0px, 2rem) rotate(1deg)
+            }
+            50% { 
+                transform: translate(0px, -2rem) rotate(-1deg)
+            }
+            100% { 
+                transform: translate(0px, 2rem) rotate(1deg)
+            }
         }
     </style>
 </head>
@@ -83,6 +89,8 @@
 
             button.style.display = "none";
             merryChristmas.style.display = "block";
+            santa.style.animation = "moveSanta 2s ease-in-out";
+            santa.style.animationIterationCount = "infinite";
             santa.style.display = "block";
             overlay.style.opacity = 1;
 
