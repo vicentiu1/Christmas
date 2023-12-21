@@ -84,13 +84,14 @@
             merryChristmas.style.display = "block";
             santa.style.display = "block";
             overlay.style.opacity = 1;
-            santa.style.animation = "moveSanta 5s ease-in-out";
 
-            // Opțional: Ascunde elementele după 5 secunde
-            // setTimeout(function() {
-            //     santa.style.display = "none";
-            //     overlay.style.opacity = 0;
-            // }, 5000);
+            // Opțional: Ascunde elementele după 15 secunde
+            setTimeout(function() {
+                santa.style.display = "none";
+                merryChristmas.style.display = "none";
+                overlay.style.opacity = 0;
+                button.style.display = "block";
+            }, 15000);
         };
     </script>
 </body>
