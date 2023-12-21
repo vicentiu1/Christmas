@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confetti și Moș Crăciun</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 10vh;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("./confeti.gif");
+            opacity: 0; /* Inițial transparent */
+            transition: opacity 0.5s ease;
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        #confettiButton {
+            padding: 10px 20px;
+            font-size: 5rem;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%; /* Face butonul rotund */
+            background-color: red; /* Culoare roșie pentru fundal */
+            color: white; /* Text alb pentru contrast */
+            border: none; /* Elimină bordura implicită */
+            outline: none; /* Previne afișarea chenarului de focus */
+            font-weight: bold; /* Text îngroșat */
+            text-transform: uppercase;
+            height: 30rem;
+            width: 30rem;
+        }
+
+        #santa {
+            width: 50rem;
+            height: auto;
+            display: none;
+            /* animation: moveSanta 5s ease-in-out; */
+        }
+
+        #merryChristmas {
+            width: 50rem;
+            height: auto;
+            display: none;
+        }
+
+        @keyframes moveSanta {
+            0% { left: 100%; top: 75%; }
+            50% { left: 50%; top: 30%; }
+            100% { left: 0; top: 75%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <button id="confettiButton">PRESS <br /> ME</button>
+    <img id="santa" src="./santa.png" alt="Mos Craciun"/>
+    <img id="merryChristmas" src="./merry.png" alt="merry christmas"/>
+
+    <script>
+        document.getElementById("confettiButton").onclick = function() {
+            var button = document.getElementById("confettiButton");
+            var santa = document.getElementById("santa");
+            var merryChristmas = document.getElementById("merryChristmas");
+            var overlay = document.getElementById("overlay");
+
+            button.style.display = "none";
+            merryChristmas.style.display = "block";
+            santa.style.display = "block";
+            overlay.style.opacity = 1;
+            santa.style.animation = "moveSanta 5s ease-in-out";
+
+            // Opțional: Ascunde elementele după 5 secunde
+            // setTimeout(function() {
+            //     santa.style.display = "none";
+            //     overlay.style.opacity = 0;
+            // }, 5000);
+        };
+    </script>
+</body>
+</html>
